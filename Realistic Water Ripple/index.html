@@ -11,11 +11,22 @@
 </head>
 
 <body onclick="changeImage()">
+    <img id="gpImage" src="https://lh3.googleusercontent.com/H9V3bqsLSQ944BHGg5PVp4dyYnZSOn5v3ZhFksi1Pm4jYwkp39K0JljhNAw6zUW90mNnnpDGxjsIYSDeb-twF7njX5Q_8wyniemtcV9zFwQ3esE6g4eJAQgLdr_Jl2WcMgiT-WlDcpdUZPNqWEHthzZ5aPf9qyiLzW5mGB5kR3K-1YHUH96SB_k6TEuF6S9emKwdfy5C4SBRA57f-Db_2sPF8mUOPGPk2cknR3KLEp39UioBWS8AQJ1hiG0UqZT13pLiMADNyNwwD7x0uJv9ihwoBXuT0V_BhNgJp7Z723xvdLeTsdhCEGQNDg9kvXzfdpOAuyxBlkUOMnuHUyQ6PLUCh2A0m5rMY2LO9eYlxH4CjG1hOF6C6P9difYtWEY8HWTV0z7yNV_sWCaENA4n6XG4GuUXv39hO3vM5MlAa5KLBt0mnAjOly6tzuBjpvuWmYvw1YlYEDiKKfHn_9KiRX16qSv9iSPpNS2hIeFJW7a1V3PgJ9-0-zmStfsYR8i5YSceo3h1Cbh6yMOCWgl6rxUbRVKiBpsS-hapUlPFwcLtyUMa3_9p-vHGsDq_uiN4osDjo7ltutCjrFckjCI_ZxkP7xDp2lDfkmPu-mvVzbReK4ZPUSiO6vmOcgb_QolZFJ81lrdtMj9KR1oDWP_sR73wuyeiTxrpzUutr8_X5FaffTlm-jz8FBK8O_evk79PAUzm3QJD160bfqj7PpswCzPU0A=w1008-h673-no"
+        alt="">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.0.3/pixi.min.js"></script>
     <script>
         let app; // First create and application object
 
-
+        // for Codepen
+        let arrayImages = [
+            'https://lh3.googleusercontent.com/IN9ZoROvqJLhd4d8bTGnviQOenN4jd5Z77wwCavpMRdL_oj4p1uU8RqsRPSwodF2BMZlFPhPXj6ii8Ez71h2_KPNsNXmJYpXo0PVWywrhtJZKrV735HCThAXolwNQpkwh9DhntF3cY-33LexWdt2Xl6AkGg-f4AnRmzDyXQuYKXqGHpF0SRqc2dFG-yEbR0TtWT-YCOh4pb4dZPvMxtTN62OC9mOuJWXCz1uWu-D855Fvzn6fGAPoj4_dnyy0QydKXV2GmG5FMrE_WeE0uhwpuFyiAFmviIe_Zmxo_9T7aJteFORhxoS9z1P0sp5wP0Cb0nZGXyASguKQELfOkiVVMrcCp3p9GvEqd-mPP-RS8vTo1yg4eTDjCE7EDhORJwpKLpNynt4h5jVLIaDYxlbmYBj8yOHpOh-2BmgvD0ISl5IQnM2fubEsFadNEoVXbQkj3e1jNqJemV8gW05geW5Z7zVz-wud333kuAa38T1JK_DKyanH5j1cOJSoyUlksRNJTcshjH8evTgTDuXUguMzsE4CvE5Pp-t2xJbE4gEp9uSEI-5zdXj15Kz0aSo_rS08YjN99Ss7jcTf9o10RKCNlWYwzelLj_RYqHrlcjeiMnM0lEK2KjRiGrjI8DjzL-ZxO8MYDzugAnQC5_8AiExT3ANmDF55HzqYDQKZo0ZLZxbgy4QduQdRt1CLoF-tBIiSxiRgZMWEZ4VaXPSoorVPmYIzA=w1008-h672-no',
+            'https://lh3.googleusercontent.com/LbfCEwSF03mBuflpCOMdX_VazCSvWAwFkGAhKvoHl0jpRs4lEtlPnBz0fRl98w_DcDBrNVpydLCJ_ymlsaJ_ByG2WwfhWf8QB1CfJsVhcIlFEKh6uay4fYZDP9C82Q4KwHteKaRe82bI9_-KIPQadyNKRKQSz2RGRh-Sn_EiKvi0Ix4e4KPxBvc6KajARwt8fqLdvTKmcS4LGpmTqfL1RCDi_nmSZLgl0YUmNEwFPlXHohW_rtbAR9v4quf1jv9GJowlEAP-XuzkgWIkaSEb7rVDyf9UmaiwwV-OCTc_8o_3ztTnbApene-o2X8olDyaCrZI5OcEyCItEq2FwFI5qhMowIF1qmBBHxMAm4Vuz30xqlyWNiHaL5ZJBMXoSYXkJu7XYipaOxS1CrbJyF_tMLxEoBH4CFHk0wb3FsS_iFvk-lEH3CV7BILvUIb7AqaOkVHhUgP1uoGhfEgJEXybfO1ATYcrY4wHfRTACdAbSztn2C6LU_8eGwGHnIaWMIHM7fyhdQjCQeF_3DazXkvWd_tDA1WKQb1Thzp8VIhkSedUvlt93DnPjYQ_dslm2dImquTd9rLQ12zwAAXd63Jhv-p-f-Z02kCcWR3dSaih-fpw2YwcTVyuStR5aNXvhdan7L0donerK4gcq7YewvLJtdGav8nfixDyRdOv951ejFu7LIpx7iaFHO4HNFl9cy-dDeoZ-CLeRNlvie7HkdE5LsfXvA=w1008-h673-no',
+            'https://lh3.googleusercontent.com/H9V3bqsLSQ944BHGg5PVp4dyYnZSOn5v3ZhFksi1Pm4jYwkp39K0JljhNAw6zUW90mNnnpDGxjsIYSDeb-twF7njX5Q_8wyniemtcV9zFwQ3esE6g4eJAQgLdr_Jl2WcMgiT-WlDcpdUZPNqWEHthzZ5aPf9qyiLzW5mGB5kR3K-1YHUH96SB_k6TEuF6S9emKwdfy5C4SBRA57f-Db_2sPF8mUOPGPk2cknR3KLEp39UioBWS8AQJ1hiG0UqZT13pLiMADNyNwwD7x0uJv9ihwoBXuT0V_BhNgJp7Z723xvdLeTsdhCEGQNDg9kvXzfdpOAuyxBlkUOMnuHUyQ6PLUCh2A0m5rMY2LO9eYlxH4CjG1hOF6C6P9difYtWEY8HWTV0z7yNV_sWCaENA4n6XG4GuUXv39hO3vM5MlAa5KLBt0mnAjOly6tzuBjpvuWmYvw1YlYEDiKKfHn_9KiRX16qSv9iSPpNS2hIeFJW7a1V3PgJ9-0-zmStfsYR8i5YSceo3h1Cbh6yMOCWgl6rxUbRVKiBpsS-hapUlPFwcLtyUMa3_9p-vHGsDq_uiN4osDjo7ltutCjrFckjCI_ZxkP7xDp2lDfkmPu-mvVzbReK4ZPUSiO6vmOcgb_QolZFJ81lrdtMj9KR1oDWP_sR73wuyeiTxrpzUutr8_X5FaffTlm-jz8FBK8O_evk79PAUzm3QJD160bfqj7PpswCzPU0A=w1008-h673-no',
+            'https://lh3.googleusercontent.com/GQF_r_-OdL1b6NbwS32q47lBSKu8sneFwSOyLGf5XlzHJFyuK8XvyQTrFzc1QsBTu8Hgq_3wlSauMpLxZeRnlMhMNm80xhLChvY1kjVgAmb8BgO6Srs0hQnDNJ7-YKs1GtyRWRJMgIA9nbDWRsuI4T015HJ6PNpV8kovDS0bO44i_FKAhNTRtpx781zrYZTNEJHXCOir4EnjHMcf9svieOyvKPn_lD8rmVuf7fryGBSCzrBu7Ak3ciPPvBpsIFDVnxaJvEYmz9wa3D1lp1bDg8p5Y998SNgZNvYsw5VmaoM-YfRbPr64_1aUa0kFUh5q4G2Ks9IiX7tFfJ3S1Qbp6zpu9eHeGSbpn7-K744KJOMwkyr8WaG0K_bmEk34ujbTdxDXGrT-7ELxaTy4hJKKJhKLRN66rMURbnxy3J_nqMKGTSL_1Zo51I43a3Ok-3nzrWDV0nbOjQ3g1RPzYxn6nBdZYGS-bGRd67N5ULx3EhnbUOJ65Kw1C3YywQ3DYS9iqtjHDk1lGbqieFso8oqtZxBRm2_ZFFG-64CIeQTnPcefIkWKL1YRzACUChdROOOatfzZmheplUW1YUmywiERpoD2DQ0brmBlwJF_bZGitIsCqhDlSwlsz6XTfDLCMsmaEi9JJV2rzjW4lXiyz2jxzw-nWQ1LscuScYqGBRq1RkfLsqAEIsOBESCCXGKbEfF__NkA6k-lTTfSHG8eexDtzjRobw=w1008-h756-no',
+            'https://lh3.googleusercontent.com/k0bDI4jaMZv2_xOEtOocN7Q9kUahsD5kTtiCH3lv05YwXIOzhPWgQrZRghF3TruqeG5TfJS1NgdRc_VZ0YoZA_-Q2qZUXRL-IBzDsP6V0d7u6k9EHLJLsuYgQzPYiTPntdSCGx6r_M7MuDzPiXSYckXkl8HQGuJVbRyYKAYjGnUfJ0rEWbXS4bkF3LRoLYpLon400pZLtWblRj_hvrF1rI5xElqDG2TB3xwTJ08sYLqhTWpEDQ-AiP5vbpaXv9PMCEIg8Ef_sAVT2jnh3fdGWbTyW9KKGSAf08a6UenQtrXzJWm1qro53ocvvJD8EBy0QnCL3i5hrnyzCKcEFF0Y8tEtfHdrQQjRKdFfuBc8GXuqE3EKzBf-P7wWKls2Yjm7L4T1ZD8I8UF-9aIvbohiobY6DcNBKEmwfoAjrSNQvIiT2vN6hTUbLb_vmyPLU9E4OTd-_m1XJEujQ35pcQPFdoNzaOHy754wMw__v7-xPrsLyVNrQGM4GJ6A6L5DLlF_Y25PqcplcnqwgzGcbrFc6FS1KiGG9zQLCQ51AE8xPBAgT2bFJUvBhrx7Y5YVT5fsI8MTiyQgY3R7Jw_YB_jy9H7Lhm8ZTMlsb6u2D77tw5XbnFSF5jfA2N0gfUDjdOP9qCtYOVmj11yI_IrsEGRCbwLM4yzquxjfmTSCAOeUdW6Xd8kfyRPSwJHyIWq--J2gLhQZW_obbcAEaWs7vEnSB-_qjw=w1008-h700-no',
+            'https://lh3.googleusercontent.com/JpvEYK7UAM87wJWCV23mdM2IfKec4maW0IiSmGwh2DQ1_PoXsnpLchjQRR8ydkCJ5YV1NJGWZdVaCe6n5KS7TKqNUg2vAWRzFnsdAurAvDPYym8PyzvOdZlsmRNOSpjDfX5sYgrGJioG1vEe38OB6tOy8oPjhEhwqQcIQ3Gm2cGkzbIrWwzPLzJK7KA6zWbK_EG8wuiW8DQFEx7Nq8x2enynJvzcNgh4sSmUec0v54W2pzy9KcSWDB7tCcsglkVgeLavE8vEpBbQoLY3_0wPG5KII6lEoNYggL5fXjmJzpMyZzMHhX3puw-Fd2LIGacJpliXkpVxiYBmPVZt0Oi2vBBxBfVOwsUz46pMpBGp1dsE5p8D56ul57oD54gKF4zpvEXsE9QcPbImRYTk_BUWjJD0LrA1NunV8WIIFNme5u8JpS9T2Ogr056_igoYuNqJW2MrtvDV7TFD7Xvo6UXYEgVCYoaQ69Ond5PGP2-2wl2rxYhth1YJyvacQR9HspW3w0gcXZlXLkm4DHZE2ckPbgYLdzb-LiMpf8Jb-tYAQevn3QYtVLwnbgFrV1OYe6xEqVf9TQMrWX324w6qaxFCCRG-Yt_x-TEqiX3b3h1R2D1Ok4d5mRxwax0exMrfZ9P-z1uh3Lbafjc5L8uHzjY4aBZ5AihBfOpiB_X2rDAbAi8kJn-kS2VoJI2TxMCopfsdP9M146rN5itHUa2TyNBdHCcE_Q=w1008-h668-no',
+            'https://lh3.googleusercontent.com/vRwcezvtArEuY-T5TkyydxlMCDSeYT_-8WA9CDLDPh0ayhtMgwke7l97cgf3YzBrCwlzv6U-MHI1b4YH3FECrbz48tCibx_cQRD48NwbpUsIhmEONQqL3Zx02KTSEWF-sg7P0GFSdip8qSGV4w6wMxITQQfuFBBT-DTZcTEJy55ZVyH9Q-tgDlVPpOycF7ZATyLKHDr-XsX8Nu4QXX4FhZuCpyFVM90SsD9Dhs3YUhzo6DNgAH_EOP1J-901zcI7VQoxjpt3z5dIg8Jkaj_qfaZwazToWz71I96YXutt4CoaXOjVnDzTQ_DvqiVzPjVek2VgWCWTU8Bzwnyg9GI1yFSyL0HpLcY18MXlgrjdce0AZLCNaA8akZV7Sbcij1IQru3qp8GCgkUQMA2ykTeSLpSaXDZCconF_ebao_MJFcAq4kUWMnzMySc8IOX1Xi_RAL8FDQJVHz7Dz0HoWgHBlPNmZFkTGdnvaWtd_la_294Po-EUJ7mDLQACed5n6hCNCa5blTK8bCdWC8PFjqZyzCVI6S2VEjLOV-njZNRdaM047yXXWZMLzDU6X6iw2MK8ms6ioZswywqfvSjU7kVN4TRWtHMhS_xkY4LrYDoVpxL9vPE5SYcXy0LbJZCVnKdT1IQPfONwRXbqw5Me0xG0wGaGF-_Mf39r3QPiw1A84QcBIotsm2HX8AtYUtBjX-_JPhw5DRQJuuPB1CCQrz1LJ3l4aw=w1008-h672-no',
+        ]
 
         // We need a renderer, root container and time tracking to render the scene
         // function initPixi() {
@@ -29,7 +40,9 @@
         document.body.appendChild(app.view);
 
         // Now we create a sprite from jpg image to add it to the scene
-        let image = new PIXI.Sprite.from(`underwater${Math.floor(Math.random() * 7)+1}.jpg`);
+        // let image = new PIXI.Sprite.from(`underwater${Math.floor(Math.random() * 7)+1}.jpg`);
+        let image = new PIXI.Sprite.from(document.getElementById('gpImage').src);
+        // let image = new PIXI.Sprite.from(arrayImages[Math.floor(Math.random() * 7)]); // codepen
 
         image.width = window.innerWidth; // Setting width
         image.height = window.innerHeight; // Setting height
@@ -48,7 +61,7 @@
 
         // applying transform scale to the renderer for the borders
         app.renderer.view.style.transform = 'scale(1.02)'
-
+        app.renderer.transparent = true;
         // Reducing density of ripple
         displacementSprite.scale.x = 5;
         displacementSprite.scale.y = 5;
@@ -67,6 +80,7 @@
 
         function changeImage() {
             image = new PIXI.Sprite.from(`underwater${Math.floor(Math.random() * 7)+1}.jpg`);
+            // image = new PIXI.Sprite.from(arrayImages[Math.floor(Math.random() * 7)]); // Codepen
             image.width = window.innerWidth;
             image.height = window.innerHeight;
             app.stage.addChild(image);
