@@ -10,10 +10,11 @@
 
 </head>
 
-<body onclick="changeImage()">
-
+<body>
+    <div id="iwanttosleep" onclick="changeImage()"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.0.3/pixi.min.js"></script>
     <script>
+        document.getElementById('iwanttosleep').onclick = changeImage; // had to do this for mobile users because body onclick did not work
         let app; // First create and application object
 
         // We need a renderer, root container and time tracking to render the scene

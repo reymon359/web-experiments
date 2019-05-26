@@ -3,3 +3,13 @@ body {
     overflow: hidden;
     cursor: pointer;
 }
+
+div {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 10;
+}
