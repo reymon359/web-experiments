@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Realistic Water Ripple</title>
+
 </head>
 
 <body>
     <script src="../assets/libraries/pixi.min.js"></script>
     <script>
         let app; // First create and application object
-
+        console.log('hola');
         // We need a renderer, root container and time tracking to render the scene
         function initPixi() {
 
@@ -27,9 +28,20 @@
 
             // Now we create a sprite from jpg image to add it to the scene
             let image = new PIXI.Sprite.from('water1.jpg');
-            image.width = window.innerWidth;
-            image.height = window.innerHeight;
+            image.width = window.innerWidth; // Setting width
+            image.height = window.innerHeight; // Setting height
 
+            app.stage.addChild(image); // We add the image to the scene
+
+            // To create the ripple we will use Displacement mapping 
+            displacementSprite = new PIXI.Sprite.from('cloud.jpg');
+            displacementFilter = new PIXI.filters.displacementFilter(displacementSprite); // Creating the filter from the sprite 
+            // We need to set the wrap mode to repeat to make sure that the displacement 
+            // covers the entire image
+            displacementSprite.texture.baseTexture.wrapmode = PIXI.WRAP_MODES.REPEAT;
+            // Now we add it to the stage and apply the filter
+            app.stage.addChild(displacementSprite);
+            app.stage.filters = [displacementFilter];
         }
     </script>
 </body>
