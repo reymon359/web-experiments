@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <script src="../assets/libraries/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.0.3/pixi.min.js"></script>
     <script>
         let app; // First create and application object
 
@@ -38,18 +38,27 @@
             displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite); // Creating the filter from the sprite 
             // We need to set the wrap mode to repeat to make sure that the displacement 
             // covers the entire image
-            displacementSprite.texture.baseTexture.wrapmode = PIXI.WRAP_MODES.REPEAT;
+            displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
             // Now we add it to the stage and apply the filter
             app.stage.addChild(displacementSprite);
             app.stage.filters = [displacementFilter];
 
-            animate();
+            // applying transform scale to the renderer for the borders
+            app.renderer.view.style.transform = 'scale(1.02)'
+
+            // Reducing density of ripple
+            displacementSprite.scale.x = 5;
+            displacementSprite.scale.y = 5;
+
+
+            animate(); // Animation loop
         }
 
         // Creating the animation and moving the displacement map position
         function animate() {
-            displacementSprite.x += 8;
-            displacementSprite.y += 3;
+            // console.log('animate');
+            displacementSprite.x += 10;
+            displacementSprite.y += 4;
             requestAnimationFrame(animate); // Loop
         }
 
