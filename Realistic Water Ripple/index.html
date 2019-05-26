@@ -14,7 +14,7 @@
     <script src="../assets/libraries/pixi.min.js"></script>
     <script>
         let app; // First create and application object
-        console.log('hola');
+
         // We need a renderer, root container and time tracking to render the scene
         function initPixi() {
 
@@ -35,14 +35,25 @@
 
             // To create the ripple we will use Displacement mapping 
             displacementSprite = new PIXI.Sprite.from('cloud.jpg');
-            displacementFilter = new PIXI.filters.displacementFilter(displacementSprite); // Creating the filter from the sprite 
+            displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite); // Creating the filter from the sprite 
             // We need to set the wrap mode to repeat to make sure that the displacement 
             // covers the entire image
             displacementSprite.texture.baseTexture.wrapmode = PIXI.WRAP_MODES.REPEAT;
             // Now we add it to the stage and apply the filter
             app.stage.addChild(displacementSprite);
             app.stage.filters = [displacementFilter];
+
+            animate();
         }
+
+        // Creating the animation and moving the displacement map position
+        function animate() {
+            displacementSprite.x += 8;
+            displacementSprite.y += 3;
+            requestAnimationFrame(animate); // Loop
+        }
+
+        initPixi();
     </script>
 </body>
 
