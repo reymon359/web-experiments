@@ -11,7 +11,27 @@
 
 <body>
     <script src="../assets/libraries/pixi.min.js"></script>
+    <script>
+        let app; // First create and application object
 
+        // We need a renderer, root container and time tracking to render the scene
+        function initPixi() {
+
+            app = new PIXI.Application({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+
+            // Now we add the scene to the html as a canvas
+            document.body.appendChild(app.view);
+
+            // Now we create a sprite from jpg image to add it to the scene
+            let image = new PIXI.Sprite.from('water1.jpg');
+            image.width = window.innerWidth;
+            image.height = window.innerHeight;
+
+        }
+    </script>
 </body>
 
 </html>
