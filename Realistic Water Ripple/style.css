@@ -13,3 +13,10 @@ div {
     cursor: pointer;
     z-index: 10;
 }
+
+#iwanttosleep h3 {
+    text-align: center;
+    color: white;
+    font-family: arial;
+    text-shadow: -1px 1px 13px #0a113a;
+}
