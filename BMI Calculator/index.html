@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <div class=" max-550">
+        <h2>BMI calculator</h2>
+        <p>A <b>BMI calculator</b> I made for a personal project. Enter your height in cm and your weight in kg</p>
+        <form onsubmit="return calculateImc(this);" action="">
+            <label for="height">Height (cm)</label>
+            <input type="number" max="200" name="height" id="height" placeholder="180"><br><br>
+            <label for="weight">Weight (kg)</label>
+            <input type="number" max="300" name="weight" id="weight" placeholder="74.8"><br><br>
+            <input type="submit" value="Submit" class="button">
+        </form>
+
+        <div>
+            <h4 id="imcData">IMC: </h4>
+            <div id="imcContainer">
+                <div id="IMCbar"></div>
+            </div>
+        </div><br>
+        <h3>What is the body mass index (BMI)?</h3>
+        <p>
+            The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy. The BMI calculation divides an adult's weight in kilograms by their height in metres squared.
+        </p>
+        <h3>BMI ranges</h3>
+        <p>
+            If your BMI is:
+            <ul style="text-align:left">
+                <li> below 18.5 – you're in the underweight range </li>
+                <li>between 18.5 and 24.9 – you're in the healthy weight range</li>
+                <li>between 25 and 29.9 – you're in the overweight range</li>
+                <li>between 30 and 39.9 – you're in the obese range</li>
+            </ul>
+            By the way the code is <a href="https://github.com/reymon359/BMI-calculator" target="_blank">here</a>. And <a href="https://codepen.io/reymon359/pen/OdXaMN" target="_blank">here</a> you can see it live
+        </p>
+
+    </div>
+</body>
+
+</html>
