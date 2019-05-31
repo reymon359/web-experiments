@@ -21,7 +21,6 @@ document.body.appendChild(app.view);
 
 // Now we create a sprite from jpg image to add it to the scene
 let image = new PIXI.Sprite.from(`https://raw.githubusercontent.com/reymon359/web-experiments/master/Underwater%20Adventures/underwater${Math.floor(Math.random() * 7)+1}.jpg`);
-
 image.width = window.innerWidth; // Setting width
 image.height = window.innerHeight; // Setting height
 
