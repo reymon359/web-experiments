@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <title>Sudoku Board Generator</title>
+</head>
+
+<body onload="generateBoard(2)">
+
+    <div class=" max-550">
+        <p>This is just a random sudoku board generator based in the difficulty introduced that i made up for my game "soduko". You can play it
+            <a href="https://play.google.com/store/apps/details?id=com.ramonmorcillo.soduko">here</a>. And get the code <a href="https://github.com/reymon359/sudoku-board-generator">here</a> Enjoy :D
+        </p>
+        <div style="display: inline;" id="difficultyButton">
+            <button onclick="generateBoard(0)"> Beginner </button>
+            <button onclick="generateBoard(1)"> Easy </button>
+            <button onclick="generateBoard(2)"> Normal </button>
+            <button onclick="generateBoard(3)"> Hard </button>
+            <button onclick="generateBoard(4)"> Extreme </button>
+        </div>
+        <div class="board">
+            <div class="row">
+                <div class="box">
+                    <div class="fixed">
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>9</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div class="fixed">
+                        <div>7</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>8</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div class="fixed">
+                        <div>5</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>4</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <div class="fixed">
+                        <div>1</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div class="fixed">
+                        <div>2</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>9</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>8</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>6</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box border-bottom">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="fixed">
+                        <div>6</div>
+                    </div>
+                </div>
+                <div class="box border-right border-bottom ">
+                    <div class="fixed">
+                        <div>5</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="fixed">
+                        <div>1</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="fixed">
+                        <div>2</div>
+                    </div>
+                </div>
+                <div class="box border-right border-bottom ">
+                    <div class="fixed">
+                        <div>4</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="fixed">
+                        <div>7</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>1</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div class="fixed">
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>7</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>8</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>5</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>2</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div class="fixed">
+                        <div>6</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>5</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>4</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>1</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box border-bottom">
+                    <div class="fixed">
+                        <div>5</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box border-right border-bottom ">
+                    <div class="fixed">
+                        <div>4</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="fixed">
+                        <div>9</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="fixed">
+                        <div>1</div>
+                    </div>
+                </div>
+                <div class="box border-right border-bottom ">
+                    <div class="fixed">
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div class="fixed">
+                        <div>8</div>
+                    </div>
+                </div>
+                <div class="box border-bottom">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <div class="fixed">
+                        <div>6</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div class="fixed">
+                        <div>1</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>4</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>2</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>8</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>5</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div class="fixed">
+                        <div>8</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>2</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>7</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>3</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div class="fixed">
+                        <div>9</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>6</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>7</div>
+                    </div>
+                </div>
+                <div class="box  border-right">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>4</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="fixed">
+                        <div>1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
