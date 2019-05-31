@@ -1,5 +1,8 @@
-// IMC calculator
-// Author: Ramon Morcillo @reymon359
+/*
+ * BMI Calculator
+ * Ramon Morcillo @reymon359
+ * ramonmorcillo.com
+ */
 
 function calculateImc(form) {
     let imcBar = document.getElementById('IMCbar');
