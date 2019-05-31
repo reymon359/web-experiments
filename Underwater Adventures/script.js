@@ -1,3 +1,10 @@
+/*
+ * Underwater Adventures
+ * Ramon Morcillo @reymon359
+ * ramonmorcillo.com
+ */
+
+
 document.getElementById('iwanttosleep').onclick = changeImage; // had to do this for mobile users because body onclick did not work
 let app; // First create and application object
 
@@ -13,7 +20,7 @@ app = new PIXI.Application({
 document.body.appendChild(app.view);
 
 // Now we create a sprite from jpg image to add it to the scene
-let image = new PIXI.Sprite.from(`https://raw.githubusercontent.com/reymon359/web-experiments/master/Realistic%20Water%20Ripple/underwater${Math.floor(Math.random() * 7)+1}.jpg`);
+let image = new PIXI.Sprite.from(`https://raw.githubusercontent.com/reymon359/web-experiments/master/Underwater%20Adventures/underwater${Math.floor(Math.random() * 7)+1}.jpg`);
 
 image.width = window.innerWidth; // Setting width
 image.height = window.innerHeight; // Setting height
@@ -21,7 +28,7 @@ image.height = window.innerHeight; // Setting height
 app.stage.addChild(image); // We add the image to the scene
 
 // To create the ripple we will use Displacement mapping 
-displacementSprite = new PIXI.Sprite.from('https://raw.githubusercontent.com/reymon359/web-experiments/master/Realistic%20Water%20Ripple/cloud.jpg');
+displacementSprite = new PIXI.Sprite.from('https://raw.githubusercontent.com/reymon359/web-experiments/master/Underwater%20Adventures/cloud.jpg');
 displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite); // Creating the filter from the sprite 
 // We need to set the wrap mode to repeat to make sure that the displacement 
 // covers the entire image
@@ -51,7 +58,7 @@ function animate() {
 }
 
 function changeImage() {
-    image = new PIXI.Sprite.from(`https://raw.githubusercontent.com/reymon359/web-experiments/master/Realistic%20Water%20Ripple/underwater${Math.floor(Math.random() * 7)+1}.jpg`);
+    image = new PIXI.Sprite.from(`https://raw.githubusercontent.com/reymon359/web-experiments/master/Underwater%20Adventures/underwater${Math.floor(Math.random() * 7)+1}.jpg`);
     image.width = window.innerWidth;
     image.height = window.innerHeight;
     app.stage.addChild(image);
