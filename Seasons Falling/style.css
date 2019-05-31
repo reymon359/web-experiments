@@ -51,7 +51,7 @@ section {
 
 .set div:nth-child(3) {
     left: 25%;
-    animation: animate 22s linear infinite;
+    animation: animate 16s linear infinite;
 }
 
 .set div:nth-child(4) {
@@ -68,7 +68,7 @@ section {
 
 .set div:nth-child(6) {
     left: 55%;
-    animation: animate 12s linear infinite;
+    animation: animate 9s linear infinite;
     animation-delay: -7s;
 }
 
@@ -85,7 +85,7 @@ section {
 
 .set div:nth-child(9) {
     left: 75%;
-    animation: animate 18s linear infinite;
+    animation: animate 14s linear infinite;
     animation-delay: -8s;
 }
 
@@ -120,9 +120,30 @@ section {
 }
 
 
-/* Now the second set of elements */
+/* Now the closest set of elements */
 
 .set2 {
-    transform: scale(2) rotateY(180deg);
+    transform: scale(2) rotateY(180deg) translateX(-10px);
     filter: blur(2px);
+}
+
+
+/* Now the furthest set of elements */
+
+.set3 {
+    transform: scale(0.8) rotateX(180deg) translateX(+10px);
+    filter: blur(4px);
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 8em;
+    font-family: Arial, Helvetica, sans-serif;
 }
