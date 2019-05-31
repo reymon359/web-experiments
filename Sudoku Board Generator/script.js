@@ -1,6 +1,8 @@
-// Sudoku-board-generator 
-// Author: Ramon Morcillo @reymon359
-
+/*
+ * Sudoku board Generator
+ * Ramon Morcillo @reymon359
+ * ramonmorcillo.com
+ */
 
 function generateBoard(difficulty) {
     let board = [
