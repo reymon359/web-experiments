@@ -29,7 +29,7 @@ body {
     content: 'ne🙃n';
     position: absolute;
     mix-blend-mode: difference;
-    filter: blur(4px)
+    filter: blur(4px);
 }
 
 .neon-wrapper {
