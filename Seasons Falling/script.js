@@ -4,12 +4,12 @@
  * ramonmorcillo.com
  */
 
-let seasonIndex = (Math.floor(Math.random() * 3) + 1); // The season we will start. It will be random
-console.log(seasonIndex);
+let seasonIndex = (Math.floor(Math.random() * 4) + 1); // The season we will start. It will be random
 
 function changeSeason() {
     let html = '';
     // I will build the html here
+
     html += `<section><h2>Seasons Falling</h2>`;
 
     for (let containerIndex = 1; containerIndex < 4; containerIndex++) {
@@ -29,11 +29,14 @@ function changeSeason() {
         html += `</div>`;
     }
 
+    html += `<a href="https://ramonmorcillo.com" >Ramon Morcillo @reymon359</a>`;
+
     html += `</section>`;
     document.getElementsByTagName('body')[0].innerHTML = html;
 
     // Increasing the season number
-    seasonIndex = (seasonIndex === 3) ? 1 : seasonIndex + 1;
-    console.log(seasonIndex);
-    setTimeout(() => { changeSeason(); }, 10000);
+    seasonIndex = (seasonIndex === 4) ? 1 : seasonIndex + 1;
+
+    // Changing season in 10 sec
+    // setTimeout(() => { changeSeason(); }, 10000);
 }
