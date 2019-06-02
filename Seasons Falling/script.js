@@ -4,9 +4,8 @@
  * ramonmorcillo.com
  */
 
-let seasonStart = (Math.floor(Math.random() * 4) + 1); // The season we will start. It will be random
-console.log(seasonStart);
-changeSeason();
+let seasonIndex = (Math.floor(Math.random() * 2) + 1); // The season we will start. It will be random
+console.log(seasonIndex);
 
 function changeSeason() {
     let html = '';
@@ -22,7 +21,7 @@ function changeSeason() {
 
             for (let imgIndex = 1; imgIndex < 4; imgIndex++) { // The loop for the images
 
-                html += `<div><img src="https://raw.githubusercontent.com/reymon359/web-experiments/master/Seasons%20Falling/season1_${imgIndex}.png" alt=""></div>`;
+                html += `<div><img src="https://raw.githubusercontent.com/reymon359/web-experiments/master/Seasons%20Falling/season${seasonIndex}_${imgIndex}.png" alt=""></div>`;
 
             }
         }
@@ -34,7 +33,9 @@ function changeSeason() {
     document.getElementsByTagName('body')[0].innerHTML = html;
 
     // Increasing the season number
-    seasonStart = (seasonStart === 4) ? 1 : seasonStart + 1;
-    console.log(seasonStart);
-    //  = (seasonStart!==4) seasonStart+1 || 1;
+    seasonIndex = (seasonIndex === 2) ? 1 : seasonIndex + 1;
+    console.log(seasonIndex);
+    setTimeout(() => {
+        changeSeason();
+    }, 5000);
 }
