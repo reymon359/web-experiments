@@ -37,5 +37,5 @@ function changeSeason() {
     console.log(seasonIndex);
     setTimeout(() => {
         changeSeason();
-    }, 5000);
+    }, 10000);
 }
