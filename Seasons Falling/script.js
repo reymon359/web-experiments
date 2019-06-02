@@ -38,5 +38,5 @@ function changeSeason() {
     seasonIndex = (seasonIndex === 4) ? 1 : seasonIndex + 1;
 
     // Changing season in 10 sec
-    // setTimeout(() => { changeSeason(); }, 10000);
+    setTimeout(() => { changeSeason(); }, 10000);
 }

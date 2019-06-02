@@ -4,6 +4,24 @@
  * ramonmorcillo.com
  */
 
+a {
+    z-index: 100;
+    position: absolute;
+    bottom: 10px;
+    /* right: 50vw; */
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+
+/* Uncomment this for a cool bug/feature 😅
+} 
+*/
+
 body {
     margin: 0;
     padding: 0;
