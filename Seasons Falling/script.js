@@ -4,6 +4,10 @@
  * ramonmorcillo.com
  */
 
+let seasonStart = (Math.floor(Math.random() * 4) + 1); // The season we will start. It will be random
+console.log(seasonStart);
+changeSeason();
+
 function changeSeason() {
     let html = '';
     // I will build the html here
@@ -26,10 +30,11 @@ function changeSeason() {
         html += `</div>`;
     }
 
-
-
     html += `</section>`;
-    console.log(html);
     document.getElementsByTagName('body')[0].innerHTML = html;
 
+    // Increasing the season number
+    seasonStart = (seasonStart === 4) ? 1 : seasonStart + 1;
+    console.log(seasonStart);
+    //  = (seasonStart!==4) seasonStart+1 || 1;
 }
