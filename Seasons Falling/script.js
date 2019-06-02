@@ -4,7 +4,7 @@
  * ramonmorcillo.com
  */
 
-let seasonIndex = (Math.floor(Math.random() * 2) + 1); // The season we will start. It will be random
+let seasonIndex = (Math.floor(Math.random() * 3) + 1); // The season we will start. It will be random
 console.log(seasonIndex);
 
 function changeSeason() {
@@ -33,7 +33,7 @@ function changeSeason() {
     document.getElementsByTagName('body')[0].innerHTML = html;
 
     // Increasing the season number
-    seasonIndex = (seasonIndex === 2) ? 1 : seasonIndex + 1;
+    seasonIndex = (seasonIndex === 3) ? 1 : seasonIndex + 1;
     console.log(seasonIndex);
     setTimeout(() => { changeSeason(); }, 10000);
 }
