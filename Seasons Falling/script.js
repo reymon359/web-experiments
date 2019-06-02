@@ -35,7 +35,5 @@ function changeSeason() {
     // Increasing the season number
     seasonIndex = (seasonIndex === 2) ? 1 : seasonIndex + 1;
     console.log(seasonIndex);
-    setTimeout(() => {
-        changeSeason();
-    }, 10000);
+    setTimeout(() => { changeSeason(); }, 10000);
 }
