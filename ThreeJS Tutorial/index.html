@@ -22,24 +22,27 @@ ramonmorcillo.com
 
     <script>
         // Creating a new scene and setting up a camera
-        const scene = new THREE.scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight);
+        const scene = new THREE.Scene();
+        // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
         // Appending element generated from renderer to the HTML
         const renderer = new THREE.WebGLRenderer({
             antialiasis: true
         });
         renderer.setSize(window.innerWidth, window.innerHeight);
+        // renderer.setSize(window.innerWidth/2, window.innerHeight/2); // Half the size
         document.getElementsByTagName('body')[0].append(renderer.domElement);
 
         // Create geometry with equal width, height and depth
         const geometry = new THREE.BoxGeometry(1, 1, 1);
         // Assign material and color
         const material = new THREE.MeshBasicMaterial({
-                    color: #199122 });
+            color: 0x199122
+        });
         // Creating the cube with the geometry and material
         const cube = new THREE.Mesh(geometry, material);
-                    scene.add(cube); // Adding to the scene
+        scene.add(cube); // Adding to the scene
     </script>
 </body>
 
