@@ -17,8 +17,8 @@ ramonmorcillo.com
 
 <body>
 
-    <div id="navbar"><span>Three.js Tutorial</span></div>
-    <script src="three.min.js"></script>
+    <!-- <div id="navbar"><span>Three.js Tutorial</span></div> -->
+    <script src="https://threejs.org/build/three.js"></script>
 
     <script>
         // Creating a new scene and setting up a camera
@@ -31,7 +31,7 @@ ramonmorcillo.com
             antialiasis: true
         });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        // renderer.setSize(window.innerWidth/2, window.innerHeight/2); // Half the size
+        // renderer.setSize(window.innerWidth / 2, window.innerHeight / 2); // Half the size
         document.getElementsByTagName('body')[0].append(renderer.domElement);
 
         // Create geometry with equal width, height and depth
@@ -52,12 +52,13 @@ ramonmorcillo.com
         // Render or animate loop
         function animate() {
 
+            requestAnimationFrame(animate);
+
             // Rotation stuff
             cube.rotation.x += 0.01;
             cube.rotation.y += 0.01;
 
             // Rendering it
-            requestAnimationFrame(animate);
             renderer.render(scene, camera);
         }
         animate();
