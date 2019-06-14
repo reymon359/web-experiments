@@ -42,6 +42,10 @@ function animate() {
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
 
+    // Sabroseo sabroso
+    if (Math.floor(Math.random() * 100) < 2) cube.material.color.setHex('0x' + Math.floor(Math.random() * 16777215).toString(16));
+
+
     // Rendering it
     renderer.render(scene, camera);
 }
