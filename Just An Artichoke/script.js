@@ -30,6 +30,22 @@ document.getElementsByTagName('body')[0].append(renderer.domElement);
 
 // })
 
+
+// Loader
+
+var loader = new THREE.GLTFLoader();
+
+loader.load('artichoke.gltf', function(gltf) {
+
+    scene.add(gltf.scene);
+
+}, undefined, function(error) {
+
+    console.error(error);
+
+});
+
+
 // Ambient light
 let light1 = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(light1);
