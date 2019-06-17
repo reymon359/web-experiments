@@ -17,6 +17,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // renderer.setSize(window.innerWidth / 2, window.innerHeight / 2); // Half the size
 document.getElementsByTagName('body')[0].append(renderer.domElement);
 
+// Now we will create a json loader object
+const obj;
+const loader = new THREE.JSONLoader();
 
 
 // By default, when we call scene.add(), the thing we add will be added to the coordinates (0,0,0). 
