@@ -17,20 +17,6 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // renderer.setSize(window.innerWidth / 2, window.innerHeight / 2); // Half the size
 document.getElementsByTagName('body')[0].append(renderer.domElement);
 
-// Now we will create a json loader object
-// let obj;
-// const loader = new THREE.LegacyJSONLoader();
-// // The function receives the geometry 
-// loader.load('artichoke.json', (g, m) => {
-//     // We will create a new mesh using the loaded object and the material
-//     obj = new THREE.Mesh(g, m);
-//     scene.add(obj);
-
-//     // Now we place the object
-
-// })
-
-
 // Loader
 
 var loader = new THREE.GLTFLoader();
@@ -70,8 +56,6 @@ function animate() {
     // cube.rotation.x += 0.01;
     // cube.rotation.y += 0.01;
 
-    // // Sabroseo sabroso
-    // if (Math.floor(Math.random() * 100) < 2) cube.material.color.setHex('0x' + Math.floor(Math.random() * 16777215).toString(16));
 
 
     // Rendering it
