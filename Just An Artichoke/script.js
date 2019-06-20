@@ -7,18 +7,18 @@
 // Creating a new scene and setting up a camera
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xdddddd)
-
-
-// const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight);
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 5000);
 
-// Appending element generated from renderer to the HTML
+// Now the lighting
+hlight = new THREE.AmbientLight(0x404040, 100);
+scene.add(hlight);
+
+// Render
 const renderer = new THREE.WebGLRenderer({
     antialiasis: true
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-// renderer.setSize(window.innerWidth / 2, window.innerHeight / 2); // Half the size
-document.getElementsByTagName('body')[0].append(renderer.domElement);
+document.body.appendChild(renderer.domElement);
 
 // Loader
 
