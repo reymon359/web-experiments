@@ -15,10 +15,16 @@ const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerH
 // camera.position.y = 100;
 camera.position.z = 5;
 
-
 // Now the lighting
 const hlight = new THREE.AmbientLight(0x404040, 100);
 scene.add(hlight);
+
+// I will add another light because just the ambient one is not enough
+const directionalLight = new THREE.DirecionalLight(0xffffff, 100);
+directionalLight.position.set(0, 1, 0); // Pointing from above
+directionalLight.castShadow = true; // Shadows 🍔
+scene.add(directionalLight);
+
 
 // Render
 const renderer = new THREE.WebGLRenderer({
