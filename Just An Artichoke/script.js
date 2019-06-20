@@ -4,13 +4,20 @@
  * ramonmorcillo.com
  */
 
-// Creating a new scene and setting up a camera
+// Creating a new scene  
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xdddddd)
+scene.background = new THREE.Color(0xdddddd);
+
+// Setting up a camera
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 5000);
+// camera.rotation.y = 45 / 180 * Math.PI;
+// camera.position.x = 800;
+// camera.position.y = 100;
+camera.position.z = 5;
+
 
 // Now the lighting
-hlight = new THREE.AmbientLight(0x404040, 100);
+const hlight = new THREE.AmbientLight(0x404040, 100);
 scene.add(hlight);
 
 // Render
@@ -21,33 +28,18 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Loader
-
-var loader = new THREE.GLTFLoader();
-
+const loader = new THREE.GLTFLoader();
+// Loading scene
 loader.load('artichoke.gltf', function(gltf) {
 
+    let artichoke = gltf.scene.children[0];
+    artichoke.scale.set(0.85, 0.85, 0.85);
+
     scene.add(gltf.scene);
-
+    renderer.render(scene, camera);
 }, undefined, function(error) {
-
     console.error(error);
-
 });
-
-
-// Ambient light
-let light1 = new THREE.AmbientLight(0xffffff, 0.5);
-scene.add(light1);
-
-// Point light
-let light2 = new THREE.PointLight(0xffffff, 0.5);
-scene.add(light2);
-
-// By default, when we call scene.add(), the thing we add will be added to the coordinates (0,0,0). 
-// This would cause both the camera and the cube to be inside each other. 
-// To avoid this, we simply move the camera out a bit.
-camera.position.z = 5;
-
 
 
 // Render or animate loop
