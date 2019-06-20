@@ -68,16 +68,18 @@ loader.load('artichoke.gltf', function(gltf) {
     console.error(error);
 });
 
+// Camera controls
+const controls = new THREE.OrbitControls(camera);
+// We will add listeners to track the mouse controls
+controls.addEventListener('change', renderer);
 
 // // Render or animate loop
 function animate() {
-
+    // Rendering it
+    renderer.render(scene, camera);
     requestAnimationFrame(animate);
 
     // Rotation stuff
-    artichoke.rotation.x += 0.01;
-    artichoke.rotation.y += 0.01;
-
-    // Rendering it
-    renderer.render(scene, camera);
+    artichoke.rotation.x += 0.001;
+    artichoke.rotation.y += 0.001;
 }
