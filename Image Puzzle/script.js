@@ -93,13 +93,13 @@ function prepararDnD() {
                 lector.readAsDataURL(archivo_select);
             } else {
                 document.getElementById("btn-cerrar").style.display = "inline";
-                document.getElementById("msg-emergente1").innerHTML = "El tamaño del archivo debe ser menor de 500kb";
+                document.getElementById("msg-emergente1").innerHTML = "File size must be less than 500kb";
                 input.value = "";
                 imagen = "";
             }
         } else {
             document.getElementById("btn-cerrar").style.display = "inline";
-            document.getElementById("msg-emergente1").innerHTML = "Solo se aceptan imagenes( .jpg, .jpeg, .png y .gif)";
+            document.getElementById("msg-emergente1").innerHTML = "Just images on these formats please( .jpg, .jpeg, .png y .gif)";
             input.value = "";
             imagen = "";
         }
@@ -152,13 +152,13 @@ function archivoSubido(event, input) {
             lector.readAsDataURL(archivo_select);
         } else {
             document.getElementById("btn-cerrar").style.display = "inline";
-            document.getElementById("msg-emergente1").innerHTML = "El tamaño del archivo debe ser menor de 500kb";
+            document.getElementById("msg-emergente1").innerHTML = "File size must be less than 500kb";
             input.value = "";
             imagen = "";
         }
     } else {
         document.getElementById("btn-cerrar").style.display = "inline";
-        document.getElementById("msg-emergente1").innerHTML = "Just images in this format( .jpg, .jpeg, .png y .gif)";
+        document.getElementById("msg-emergente1").innerHTML = "Just images on these formats please( .jpg, .jpeg, .png y .gif)";
     }
 }
 //cuando el tamaño es muy grande
