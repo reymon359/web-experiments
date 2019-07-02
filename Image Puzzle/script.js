@@ -37,6 +37,7 @@ var totalPiezas = 48;
 ///            ///             ///              ///            ///            ///             ///              ///
 //preparear el drag and drop
 function prepararDnD() {
+    changeFavicon(); // Extra stuff
     var img = document.getElementById("img");
     var imgContainer = document.getElementById("img-container");
     var input = document.getElementById("foto");
@@ -627,4 +628,19 @@ function cerrarMsg() {
     document.getElementById("btn-cerrar2").style.display = "none";
     document.getElementById("msg-emergente1").innerHTML = "";
     document.getElementById("msg-emergente2").innerHTML = "";
+}
+
+///-------------EXTRA--------------------------------------------
+document.head || (document.head = document.getElementsByTagName('head')[0]);
+
+function changeFavicon() {
+    let link = document.createElement('link'),
+        oldLink = document.getElementById('dynamic-favicon');
+    link.id = 'dynamic-favicon';
+    link.rel = 'shortcut icon';
+    link.href = `https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/jigsaw-puzzle-piece_1f9e9.png`;
+    if (oldLink) {
+        document.head.removeChild(oldLink);
+    }
+    document.head.appendChild(link);
 }
