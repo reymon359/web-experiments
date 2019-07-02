@@ -11,12 +11,105 @@ ramonmorcillo.com
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://threejs.org/build/three.js"></script>
+    <script src="script.js"></script>
     <title>Image Puzzle</title>
 </head>
 
 <body>
-    <script src="script.js"></script>
+
+
+    <body onload="prepararDnD();">
+
+        <div id="fondo-negro" onClick="comenzar();">
+            <div id="winner-text"></div><br>
+            <div id="comentario"></div>
+        </div>
+        <header id="top">
+            <img src="imgs/logo.png" alt="Puzzle">
+            <div>
+                <h1>Super Puzzle</h1>
+                <footer>Desafia tu ingenio con este juego tipo rompecabezas de varias dificultades</footer>
+
+            </div>
+        </header>
+        <input style="display: none;" type="checkbox" id="ckb-menu">
+        <nav>
+            <ul>
+                <li><label for="ckb-menu">&equiv;</label></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acerca.html">acerca</a></li>
+            </ul>
+        </nav>
+        <section id="sectionPpal">
+            <article style="text-align:center;">
+                <h2>SUPERPUZZLE</h2>
+                <p>Introduce una imagen, selecciona dificultad y que comience el juego</p>
+            </article>
+            <div style="text-align:center;">
+                <section>
+                    <article id="parte1">
+                        <br><br>
+                        <div id="introducirImg">
+                            <button onClick="introducirImagen();"> Selecciona una foto </button>
+                            <div id="msg-emergente1">
+                            </div>
+                            <input type="button" id="btn-cerrar" onclick="cerrarMsg();" value="X" />
+                            <input type="file" id="foto" name="foto" accept="image/*" onchange='archivoSubido(event,this);'>
+                            <br>
+                            <div id="img-container" onClick="introducirImagen();">
+                                <img id="img" src="imgs/imagen.png" alt="" width="360" height="240" />
+                            </div>
+                        </div>
+                        <div style="display:none;margin-top: 50px;" id="img-container2">
+                            <img id="imgAyuda" src="imgs/imagen.png" alt="" width="360" height="240" />
+                        </div>
+                    </article>
+                    <article id="parte2">
+                        <div id="seleccionDificultad">
+                            <p>Selecciona un color de linea y una dificultad</p>
+                            Color de linea: <input id="colLinea" onchange='cambiarColorlina(event);' type="color"><br>
+                            <br>
+                            <button id="chupao" style="background-color:#c722b1" onClick="chupao();"> chupao </button>
+                            <button id="facil" style="background-color:#39c722" onClick="facil();"> fácil </button>
+                            <button id="media" style="background-color:#c5c722" onClick="media();"> media </button>
+                            <button id="dificil" style="background-color:#c73f22" onClick="dificil();"> difícil </button>
+                            <br>
+                        </div>
+                        <div style="display:none;text-align:center" id="mov-container">
+                            <h2>Marcador</h2>
+                            <p> Piezas mal: <span id="piezasMal"></span></p>
+                            <p> Movimientos efectuados: <span id="movimientos"></span></p>
+                            <p> Tiempo empleado: <span id="segundos"></span> segundos</p>
+                        </div>
+                        <div id="paLimpiar">
+                            <canvas id="canvas-puzzle" width="360" height="240"></canvas>
+                        </div>
+                        <canvas style="display:none" onmouseover="resetearPuzzleYCheckWin()" id="canvas-puzzle3" width="360" height="240"></canvas>
+                        <canvas style="display:none" id="canvas-puzzle2" width="480" height="360"></canvas>
+                        <canvas style="display:none" id="canvas-puzzle25" width="360" height="240"></canvas>
+                    </article>
+                </section>
+                <div style="display:none" id="piezas-container">
+                </div>
+                <div id="msg-emergente2">
+                </div>
+                <input type="button" id="btn-cerrar2" onclick="cerrarMsg();" value="X" />
+                <br>
+                <button id="comenzarBut" disabled style="background-color:#c3c3c3" onClick="comenzar();"> Comenzar </button>
+                <button id="terminarBut" disabled style="background-color:#c3c3c3" onClick="finalizar();"> Finalizar </button>
+                <button id="ayudaBut" disabled style="background-color:#c3c3c3" onClick="ayuda();"> Ayuda </button>
+                <br>
+            </div>
+        </section>
+
+        <footer>
+            <p>
+                Ramon Morcillo Cascales | &copy;<time datetime="2018">Año 2018</time> |
+                <a href="acerca.html">P&aacute;gina de contacto</a> |
+                <a href="#top" style="text-decoration: none; color: black">Volver arriba</a>
+            </p>
+        </footer>
+    </body>
 </body>
 
 </html>
