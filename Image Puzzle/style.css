@@ -24,7 +24,7 @@ body>header {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    background-color: #3207bf;
+    background-color: #8e24aa;
     flex-grow: 1;
     color: #ffffff;
     /**min-width: 515px;**/
@@ -454,8 +454,8 @@ section>article {
 #img-container {
     width: 360px;
     height: 240px;
-    border: .1em solid #3207bf;
-    border-right: .1em solid #3207bf!important;
+    border: .1em solid #8e24aa;
+    border-right: .1em solid #8e24aa!important;
     margin: 10px;
     background-image: url(imgs/imagen.png);
     background-size: 100%;
@@ -466,8 +466,8 @@ section>article {
 #img-container2 {
     width: 362px;
     height: 242px;
-    border: .1em solid #3207bf;
-    border-right: .1em solid #3207bf!important;
+    border: .1em solid #8e24aa;
+    border-right: .1em solid #8e24aa!important;
     margin: 10px;
     background-size: 100%;
     display: inline-block;
@@ -512,13 +512,13 @@ section>article {
 }
 
 #canvas-puzzle {
-    border: .1em solid #3207bf;
+    border: .1em solid #8e24aa;
     width: 360px;
     height: 240px;
 }
 
 #canvas-puzzle25 {
-    border: .1em solid #3207bf;
+    border: .1em solid #8e24aa;
     width: 360px;
     height: 240px;
 }
@@ -600,7 +600,7 @@ section>article {
 
 input[type="button"],
 button {
-    background-color: #3207bf;
+    background-color: #8e24aa;
     color: #ffffff;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
     box-sizing: border-box;
