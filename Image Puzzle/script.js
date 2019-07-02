@@ -158,7 +158,7 @@ function archivoSubido(event, input) {
         }
     } else {
         document.getElementById("btn-cerrar").style.display = "inline";
-        document.getElementById("msg-emergente1").innerHTML = "Solo se aceptan imagenes( .jpg, .jpeg, .png y .gif)";
+        document.getElementById("msg-emergente1").innerHTML = "Just images in this format( .jpg, .jpeg, .png y .gif)";
     }
 }
 //cuando el tamaño es muy grande
@@ -306,12 +306,12 @@ function comenzar() {
 
         } else {
             document.getElementById("btn-cerrar2").style.display = "inline";
-            document.getElementById("msg-emergente2").innerHTML = "Debes introducir una imagen";
+            document.getElementById("msg-emergente2").innerHTML = "You must introduce an image";
         }
 
     } else {
         document.getElementById("btn-cerrar2").style.display = "inline";
-        document.getElementById("msg-emergente2").innerHTML = "Debes elegir una dificultad";
+        document.getElementById("msg-emergente2").innerHTML = "You must choose a difficulty";
     }
 }
 //inicio del juego
