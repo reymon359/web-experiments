@@ -7,7 +7,7 @@
         <article id="parte1">
             <br><br>
             <div id="introducirImg">
-                <button onClick="introducirImagen();"> Selecciona una foto </button>
+                <button onClick="introducirImagen();"> Select an Image </button>
                 <div id="msg-emergente1">
                 </div>
                 <input type="button" id="btn-cerrar" onclick="cerrarMsg();" value="X" />
@@ -16,6 +16,7 @@
                 <div id="img-container" onClick="introducirImagen();">
                     <img id="img" src="addImage.png" alt="" width="360" height="240" />
                 </div>
+                <p> <small> You can also click or drag and drop an image up here</small></p>
             </div>
             <div style="display:none;margin-top: 50px;" id="img-container2">
                 <img id="imgAyuda" src="addImage.png" alt="" width="360" height="240" />
@@ -23,20 +24,20 @@
         </article>
         <article id="parte2">
             <div id="seleccionDificultad">
-                <p>Selecciona un color de linea y una dificultad</p>
-                Color de linea: <input id="colLinea" onchange='cambiarColorlina(event);' type="color"><br>
+                <p>Select a line color and a difficulty</p>
+                Line color: <input id="colLinea" onchange='cambiarColorlina(event);' type="color"><br>
                 <br>
-                <button id="chupao" style="background-color:#c722b1" onClick="chupao();"> chupao </button>
-                <button id="facil" style="background-color:#39c722" onClick="facil();"> fácil </button>
-                <button id="media" style="background-color:#c5c722" onClick="media();"> media </button>
-                <button id="dificil" style="background-color:#c73f22" onClick="dificil();"> difícil </button>
+                <button id="chupao" style="background-color:#c722b1" onClick="chupao();"> retard </button>
+                <button id="facil" style="background-color:#39c722" onClick="facil();"> easy </button>
+                <button id="media" style="background-color:#c5c722" onClick="media();"> normal </button>
+                <button id="dificil" style="background-color:#c73f22" onClick="dificil();"> hard </button>
                 <br>
             </div>
             <div style="display:none;text-align:center" id="mov-container">
-                <h2>Marcador</h2>
-                <p> Piezas mal: <span id="piezasMal"></span></p>
-                <p> Movimientos efectuados: <span id="movimientos"></span></p>
-                <p> Tiempo empleado: <span id="segundos"></span> segundos</p>
+                <h2>Score</h2>
+                <p> Wrong pieces: <span id="piezasMal"></span></p>
+                <p> Moves: <span id="movimientos"></span></p>
+                <p> Time: <span id="segundos"></span> seconds</p>
             </div>
             <div id="paLimpiar">
                 <canvas id="canvas-puzzle" width="360" height="240"></canvas>
@@ -52,8 +53,8 @@
     </div>
     <input type="button" id="btn-cerrar2" onclick="cerrarMsg();" value="X" />
     <br>
-    <button id="comenzarBut" disabled style="background-color:#c3c3c3" onClick="comenzar();"> Comenzar </button>
-    <button id="terminarBut" disabled style="background-color:#c3c3c3" onClick="finalizar();"> Finalizar </button>
-    <button id="ayudaBut" disabled style="background-color:#c3c3c3" onClick="ayuda();"> Ayuda </button>
+    <button id="comenzarBut" disabled style="background-color:#c3c3c3" onClick="comenzar();"> Start </button>
+    <button id="terminarBut" disabled style="background-color:#c3c3c3" onClick="finalizar();"> End </button>
+    <button id="ayudaBut" disabled style="background-color:#c3c3c3" onClick="ayuda();"> Hint </button>
     <br>
 </div>
