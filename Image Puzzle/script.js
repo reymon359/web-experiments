@@ -599,19 +599,19 @@ function crearMensaje(aux) {
     //finalizar
     if (aux == 'finalizar') {
         html +=
-            '<h2>Juego finalizado</h2>';
+            '<h2>Game ended</h2>';
         html +=
-            "<p> Has dejado " + piezasMal + "  piezas por colocar bien después de " + (moves) + " movimientos y has empleado " + (secs + 1) + " segundos </p>"
+            "<p> You left " + piezasMal + "  pieces in wrong place after " + (moves) + " moves and " + (secs + 1) + " seconds. </p>"
         html +=
-            '<button id="boton" onclick="this.parentNode.parentNode.remove();reiniciar();">Cerrar</button>';
+            '<button id="boton" onclick="this.parentNode.parentNode.remove();reiniciar();">Close</button>';
     }
     if (aux == 'sacabo') {
         html +=
-            '<h2>¡¡¡Enhorabuena!!! </h2>';
+            '<h2>¡¡¡Great Job!!! </h2>';
         html +=
-            "<p> Has montado el puzzle en " + moves + " movimientos y " + (secs + 1) + " segundos </p>"
+            "<p> You solved the puzzle in " + moves + " moves and " + (secs + 1) + " seconds. </p>"
         html +=
-            '<button id="boton" onclick="this.parentNode.parentNode.remove();reiniciar();">Cerrar</button>';
+            '<button id="boton" onclick="this.parentNode.parentNode.remove();reiniciar();">Close</button>';
     }
     //le añadimos el html a la capa del mensaje
     capa_frente.innerHTML = html;
