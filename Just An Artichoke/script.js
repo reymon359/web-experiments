@@ -83,3 +83,5 @@ function animate() {
     artichoke.rotation.x += 0.001;
     artichoke.rotation.y += 0.001;
 }
+
+// By the way the awesome artichoke model belongs to https://sketchfab.com/3d-models/globe-artichoke-5b0f419d35f94b648129e6e2305b33ac

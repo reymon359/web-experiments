@@ -1,0 +1,14 @@
+/*
+ * Image Puzzle
+ * Ramon Morcillo @reymon359
+ * ramonmorcillo.com
+ */
+
+* {
+    font-family: Arial;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
