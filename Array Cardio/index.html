@@ -1,5 +1,5 @@
 <!-- 
-Array Cardio
+Array Methods
 Ramon Morcillo @reymon359
 ramonmorcillo.com
 -->
@@ -8,16 +8,15 @@ ramonmorcillo.com
 
 <head>
     <meta charset="UTF-8">
-    <title>Array Cardio 💪</title>
+    <title>🐧 Array Methods 🐧</title>
 </head>
 
 <body>
-    <h1>Array Cardio 💪</h1>
-    <p>Get your shorts on - this is an array workout! </p>
-    <b>Array Cardio Day 1</b>
+    <h1>🐧 Array Methods 🐧</h1>
+    <p>I will show you some useful methods to work with arrays</p>
     <p>Some data we will work with</p>
 
-    <textarea rows="29" cols="75" disabled> 
+    <textarea rows="29" cols="85" disabled> 
     const inventors = [
     { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
     { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
@@ -44,6 +43,21 @@ ramonmorcillo.com
     'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 
     'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 
     'Blair, Robert', 'Blair, Tony', 'Blake, William'];
+
+    const people2 = [
+    { name: 'Wes', year: 1988 },
+    { name: 'Kait', year: 1986 },
+    { name: 'Irv', year: 1970 },
+    { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+    { text: 'Love this!', id: 523423 },
+    { text: 'Super good', id: 823423 },
+    { text: 'You are the best', id: 2039842 },
+    { text: 'Ramen is my fav food ever', id: 123523 },
+    { text: 'Nice Nice Nice!', id: 542328 }
+    ];
     </textarea>
     <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
 
@@ -128,6 +142,37 @@ ramonmorcillo.com
             'Blair, Robert', 'Blair, Tony', 'Blake, William'
         ];
 
+        const people2 = [{
+            name: 'Wes',
+            year: 1988
+        }, {
+            name: 'Kait',
+            year: 1986
+        }, {
+            name: 'Irv',
+            year: 1970
+        }, {
+            name: 'Lux',
+            year: 2015
+        }];
+
+        const comments = [{
+            text: 'Love this!',
+            id: 523423
+        }, {
+            text: 'Super good',
+            id: 823423
+        }, {
+            text: 'You are the best',
+            id: 2039842
+        }, {
+            text: 'Ramen is my fav food ever',
+            id: 123523
+        }, {
+            text: 'Nice Nice Nice!',
+            id: 542328
+        }];
+
         // Array.prototype.filter()
         // 1. Filter the list of inventors for those who were born in the 1500's
         console.log("Array.prototype.filter()\n1. Filter the list of inventors for those who were born in the 1500's")
@@ -201,6 +246,44 @@ ramonmorcillo.com
             return obj;
         }, {});
         console.log('transportation: ', transportation);
+
+        // Some and Every Checks
+        console.log("Some and Every Checks")
+
+        // Array.prototype.some() // is at least one person 19 or older?
+        console.log("Array.prototype.some()\nis at least one person 19 or older?")
+        console.log("const isAdult = people2.some((person) => (new Date().getFullYear()) - person.year >= 19);")
+        const isAdult = people2.some((person) => (new Date().getFullYear()) - person.year >= 19);
+        console.log('isAdult: ', isAdult);
+
+        // Array.prototype.every() // is everyone 19 or older?
+        console.log("Array.prototype.every()\nis everyone 19 or older?")
+        console.log("const allAdult = people2.every((person) => (new Date().getFullYear()) - person.year >= 19);");
+        const allAdult = people2.every((person) => (new Date().getFullYear()) - person.year >= 19);
+        console.log('allAdult: ', allAdult);
+
+        // Array.prototype.find()
+        // Find is like filter, but instead returns just the one you are looking for
+        // find the comment with the ID of 823423
+        console.log("Array.prototype.find()\nFind is like filter, but instead returns just the one you are looking for\nfind the comment with the ID of 823423")
+        console.log("const comment = comments.find(comment => comment.id === 823423);")
+        const comment = comments.find(comment => comment.id === 823423);
+        console.log('comment: ', comment);
+
+        // Array.prototype.findIndex()
+        // Find the comment with this ID
+        // delete the comment with the ID of 823423
+        console.log("Array.prototype.findIndex()\nFind the comment with this ID\ndelete the comment with the ID of 823423")
+        console.log("const index = comments.findIndex(comment => comment.id === 823423);")
+        const index = comments.findIndex(comment => comment.id === 823423);
+        console.log('index: ', index);
+        // comments.splice(index, 1);
+        console.log("const newComments = [...comments.slice(0, index), ...comments.slice(index + 1)];");
+        const newComments = [...comments.slice(0, index), ...comments.slice(index + 1)];
+        console.table('comments: ');
+        console.table(comments);
+        console.table('newComments: ');
+        console.table(newComments);
     </script>
     <style>
         body {
