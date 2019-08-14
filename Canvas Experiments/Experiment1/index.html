@@ -19,7 +19,7 @@
         ctx.strokeStyle = '#BADA55';
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
-        ctx.lineWidth = 5;
+        ctx.lineWidth = window.innerWidth + 100;
 
         let isDrawing = false;
         let lastX = 0;
@@ -33,6 +33,8 @@
             console.log(e);
             ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
             ctx.beginPath();
+            ctx.lineWidth = hue;
+
             // ctx.strokeStyle = '#' + Math.floor(Math.random() * 16777215).toString(16);
             // ctx.moveTo(lastX, lastY); // Start from
             ctx.moveTo(Math.floor(Math.random() * canvas.width) + 1, Math.floor(Math.random() * canvas.heigth) + 1);
@@ -40,6 +42,9 @@
             ctx.stroke();
             [lastX, lastY] = [e.offsetX, e.offsetY];
             hue++;
+            if (hue > 360) {
+                hue = 0;
+            }
         }
 
         canvas.addEventListener('mousedown', (e) => {
