@@ -1,0 +1,211 @@
+<!-- 
+Console Tricks
+Ramon Morcillo @reymon359
+ramonmorcillo.com
+  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Console Tricks!</title>
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            margin: 0;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(0, rgba(153, 232, 51, 0.37) 0%, rgba(153, 232, 51, 0.37) 20%, rgba(129, 180, 50, 0.37) 20%, rgba(129, 180, 50, 0.37) 40%, rgba(104, 128, 49, 0.37) 40%, rgba(104, 128, 49, 0.37) 60%, rgba(80, 76, 48, 0.37) 60%, rgba(80, 76, 48, 0.37) 80%, rgba(55, 24, 47, 0.37) 80%, rgba(55, 24, 47, 0.37) 100%), linear-gradient(90deg, rgb(125, 196, 198) 0%, rgb(125, 196, 198) 20%, rgb(114, 148, 197) 20%, rgb(114, 148, 197) 40%, rgb(102, 101, 196) 40%, rgb(102, 101, 196) 60%, rgb(91, 53, 194) 60%, rgb(91, 53, 194) 80%, rgb(79, 5, 193) 80%, rgb(79, 5, 193) 100%);
+            height: 100%;
+            color: white;
+            overflow: hidden;
+        }
+        
+        textarea {
+            background-color: darkcyan;
+            background: linear-gradient(0deg, rgb(113, 136, 223), rgb(17, 213, 207));
+            box-shadow: -13px 20px 25px -6px rgba(0, 0, 0, .1);
+            color: #fff;
+            max-width: 100%;
+            border-radius: 10px;
+            border: none;
+            width: 50%;
+            height: 50%;
+            max-width: 800px;
+        }
+    </style>
+    <h1>Console Tricks!</h1>
+    <span>yes, you need to open the console.</span>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+    <textarea disabled> 
+            const dogs = [{
+                name: 'Snickers',
+                age: 2
+            }, {
+                name: 'hugo',
+                age: 8
+            }];
+    
+            function makeGreen() {
+                const p = document.querySelector('p');
+                p.style.color = '#BADA55';
+                p.style.fontSize = '50px';
+            }
+            // Clearing console
+            console.clear();
+    
+            // Regular console.log()
+            console.log('Hello');
+    
+            // Interpolated
+            console.log('Hello i am a %s string!', '🥥🥥');
+            console.log(`Hello i am a ${'🥥🥥'} string!`);
+    
+            // Styled
+            console.log('%c I am some great text', 
+            'font-size:50px; background:red;');
+    
+            // Warning!
+            console.warn('Warning');
+    
+            // Error :|
+            console.error('ERROR!');
+    
+            // Info
+            console.info('I like food');
+    
+            // Testing
+            const p = document.querySelector('p');
+            console.assert(p.classList.contains('ouch'), 'That is wrong!');
+    
+            // Viewing DOM Elements
+            console.log(p);
+            console.dir(p);
+    
+            // Grouping together
+            dogs.forEach(dog => {
+                console.group(`${dog.name}`);
+                // console.groupCollapsed(`${dog.name}`);
+                console.log(`This is ${dog.name}`);
+                console.log(`${dog.name} is ${dog.age} years old`);
+                console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+                console.groupEnd(`${dog.name}`);
+            });
+    
+            // Counting
+    
+            console.count('Hi');
+            console.count('Hi');
+            console.count('Bye');
+            console.count('Bye');
+            console.count('Hi');
+            console.count('Bye');
+            console.count('Hi');
+            console.count('Bye');
+            console.count('Bye');
+            console.count('Bye');
+            console.count('Bye');
+            console.count('Bye');
+    
+            // Table
+            console.table(dogs);
+
+            // Timing
+            console.time('fetching data');
+            fetch('https://api.github.com/users/reymon359')
+                .then(data => data.json())
+                .then(data => {
+                    console.timeEnd('fetching data');
+                    console.log(data);
+                });
+    
+         
+         </textarea>
+    <script>
+        const dogs = [{
+            name: 'Snickers',
+            age: 2
+        }, {
+            name: 'hugo',
+            age: 8
+        }];
+
+        function makeGreen() {
+            const p = document.querySelector('p');
+            p.style.color = '#BADA55';
+            p.style.fontSize = '50px';
+        }
+        // Clearing console
+        console.clear();
+
+        // Regular console.log()
+        console.log('Hello');
+
+        // Interpolated
+        console.log('Hello i am a %s string!', '🥥🥥');
+        console.log(`Hello i am a ${'🥥🥥'} string!`);
+
+        // Styled
+        console.log('%c I am some great text',
+            'font-size:50px; background:red;');
+
+        // Warning!
+        console.warn('Warning');
+
+        // Error :|
+        console.error('ERROR!');
+
+        // Info
+        console.info('I like food');
+
+        // Testing
+        const p = document.querySelector('p');
+        console.assert(p.classList.contains('ouch'), 'That is wrong!');
+
+        // Viewing DOM Elements
+        console.log(p);
+        console.dir(p);
+
+        // Grouping together
+        dogs.forEach(dog => {
+            console.group(`${dog.name}`);
+            // console.groupCollapsed(`${dog.name}`);
+            console.log(`This is ${dog.name}`);
+            console.log(`${dog.name} is ${dog.age} years old`);
+            console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+            console.groupEnd(`${dog.name}`);
+        });
+
+        // Counting
+
+        console.count('Hi');
+        console.count('Hi');
+        console.count('Bye');
+        console.count('Bye');
+        console.count('Hi');
+        console.count('Bye');
+        console.count('Hi');
+        console.count('Bye');
+        console.count('Bye');
+        console.count('Bye');
+        console.count('Bye');
+        console.count('Bye');
+
+        // Table
+        console.table(dogs);
+
+        // Timing
+        console.time('fetching data');
+        fetch('https://api.github.com/users/reymon359')
+            .then(data => data.json())
+            .then(data => {
+                console.timeEnd('fetching data');
+                console.log(data);
+            });
+    </script>
+</body>
+
+</html>
