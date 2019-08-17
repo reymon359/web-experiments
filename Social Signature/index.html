@@ -15,9 +15,10 @@ ramonmorcillo.com
 </head>
 
 <body>
+
     <div class="container">
         <div class="social">
-            <div class="initial cube">Hi</div>
+            <div class="initial cube"></div>
             <div class="social-buttons">
                 <div class="cube website">
                     <a href="https://ramonmorcillo.com" target="_blank">
@@ -43,6 +44,10 @@ ramonmorcillo.com
             </div>
         </div>
     </div>
+    <script>
+        const FRUITS = ['🥝', '🥥', '🍇', '🍈', '🍉', '🍊', '🍋', '🍌', '🍍', '🍎', '🍏', '🍐', '🍑', '🍒', '🍓'];
+        document.querySelector('.initial ').innerHTML = FRUITS[Math.floor(Math.random() * FRUITS.length)];
+    </script>
     <style>
         html,
         body {
@@ -61,13 +66,13 @@ ramonmorcillo.com
         }
         
         .social {
-            /* font-size: 0px; */
             position: fixed;
             bottom: 35px;
             left: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 17082019;
         }
         
         .social .cube {
