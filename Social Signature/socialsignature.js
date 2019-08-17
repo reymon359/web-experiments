@@ -36,16 +36,142 @@ window.onload = () => {
     socialNode.innerHTML = html;
     document.querySelector('body').appendChild(socialNode);
 
-    let file = location.pathname.split("/").pop();
 
-    let link = document.createElement("link");
-    link.href = file.substr(0, file.lastIndexOf(".")) + ".css";
-    link.type = "text/css";
-    link.rel = "stylesheet";
-    link.media = "screen,print";
-
-    document.getElementsByTagName("head")[0].appendChild(link);
-
+    let styleNode = document.createElement('style');
+    html = `    
+    .social {
+        position: fixed;
+        bottom: 35px;
+        left: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 17082019;
+    }
+    
+    .social .cube {
+        width: 40px;
+        height: 40px;
+        background: #272727;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        font-size: 20px;
+        box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, .7);
+        color: white;
+    }
+    
+    .social .cube a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .social .initial {
+        transition: width 0.2s linear 0.12s, height 0.2s linear 0.12s, transform 0.2s linear 0.12s, opacity 0s linear 0.12s;
+    }
+    
+    .social .social-buttons {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 120px;
+        height: 120px;
+        border-radius: 8px;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 0s linear 0.12s;
+    }
+    
+    .social .social-buttons .cube {
+        position: absolute;
+    }
+    
+    .social .social-buttons .cube:hover {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .social .social-buttons .cube svg {
+        opacity: 0;
+        transition: opacity 0.1s linear 0.2s;
+        width: 50%;
+        transform: rotate(-45deg);
+        fill: white;
+    }
+    
+    .social .social-buttons .cube:nth-child(1) {
+        left: 1px;
+        top: 1px;
+        transition: left 0.12s linear 0.2s, top 0.12s linear 0.2s;
+    }
+    
+    .social .social-buttons .cube:nth-child(2) {
+        right: 1px;
+        top: 1px;
+        transition: right 0.12s linear 0.2s, top 0.12s linear 0.2s;
+    }
+    
+    .social .social-buttons .cube:nth-child(3) {
+        left: 1px;
+        bottom: 1px;
+        transition: left 0.12s linear 0.2s, bottom 0.12s linear 0.2s;
+    }
+    
+    .social .social-buttons .cube:nth-child(4) {
+        right: 1px;
+        bottom: 1px;
+        transition: right 0.12s linear 0.2s, bottom 0.12s linear 0.2s;
+    }
+    
+    .social:hover .initial {
+        width: 120px;
+        height: 120px;
+        transform: rotate(45deg);
+        font-size: 0px;
+        opacity: 0;
+        transition: width 0.2s, height 0.2s, transform 0.2s, font-size 0.2s, opacity 0.1s linear 0.2s;
+    }
+    
+    .social:hover .social-buttons {
+        opacity: 1;
+        transition: opacity 0s linear 0.2s;
+    }
+    
+    .social:hover .social-buttons .cube:nth-child(1) {
+        left: -4px;
+        top: -4px;
+        transition: left 0.12s linear 0.2s, top 0.12s linear 0.2s, height .4s cubic-bezier(0, 1.25, 1, -0.35), width .4s cubic-bezier(0, 1.25, 1, -0.35);
+    }
+    
+    .social:hover .social-buttons .cube:nth-child(2) {
+        right: -4px;
+        top: -4px;
+        transition: right 0.12s linear 0.2s, top 0.12s linear 0.2s, height .4s cubic-bezier(0, 1.25, 1, -0.35), width .4s cubic-bezier(0, 1.25, 1, -0.35);
+    }
+    
+    .social:hover .social-buttons .cube:nth-child(3) {
+        left: -4px;
+        bottom: -4px;
+        transition: left 0.12s linear 0.2s, bottom 0.12s linear 0.2s, height .4s cubic-bezier(0, 1.25, 1, -0.35), width .4s cubic-bezier(0, 1.25, 1, -0.35);
+    }
+    
+    .social:hover .social-buttons .cube:nth-child(4) {
+        right: -4px;
+        bottom: -4px;
+        transition: right 0.12s linear 0.2s, bottom 0.12s linear 0.2s, height .4s cubic-bezier(0, 1.25, 1, -0.35), width .4s cubic-bezier(0, 1.25, 1, -0.35);
+    }
+    
+    .social:hover .social-buttons .cube svg {
+        opacity: 1;
+        transition: opacity 0.2s linear 0.2s;
+    }`;
+    styleNode.innerHTML = html;
+    document.querySelector('body').appendChild(styleNode);
 
 
 }
