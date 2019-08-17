@@ -1,0 +1,183 @@
+<!-- 
+Checking Checkboxes
+Ramon Morcillo @reymon359
+ramonmorcillo.com
+  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checking Checkboxes✅</title>
+</head>
+
+<body>
+    <style>
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, rgb(243, 107, 55) 0%, rgb(243, 107, 55) 23%, rgb(244, 133, 60) 23%, rgb(244, 133, 60) 27%, rgb(245, 159, 64) 27%, rgb(245, 159, 64) 73%, rgb(245, 186, 69) 73%, rgb(245, 186, 69) 74%, rgb(246, 212, 73) 74%, rgb(246, 212, 73) 78%, rgb(247, 238, 78) 78%, rgb(247, 238, 78) 100%);
+            height: 100%;
+        }
+        
+        h3 {
+            font-weight: 400;
+            font-size: 2em;
+            text-align: center;
+            color: white;
+        }
+        
+        button {
+            padding: 10px;
+            border: nonde;
+            border: none;
+            border-radius: 5px;
+            background-color: #0b8dcc;
+            color: white;
+            font-size: 1.2em;
+            box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            transition: all .3s;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            color: #0b8dcc;
+            background-color: #dcf0fa;
+            padding: 12px;
+        }
+        
+        button:focus {
+            outline: 0;
+        }
+        
+        .inbox {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #F1F1F1;
+        }
+        
+        .item:last-child {
+            border-bottom: 0;
+        }
+        
+        input:checked+p {
+            background: #F9F9F9;
+            text-decoration: line-through;
+        }
+        
+        input[type="checkbox"] {
+            margin: 20px;
+        }
+        
+        p {
+            margin: 0;
+            padding: 20px;
+            transition: background 0.2s;
+            flex: 1;
+            font-size: 20px;
+            font-weight: 200;
+            border-left: 1px solid #D1E2FF;
+        }
+    </style>
+    <!--
+   The following is a common layout you would see in an email client.
+
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+
+  -->
+    <h3>Checking Checkboxes ✅</h3>
+
+    <div class="inbox">
+        <div class="item">
+            <input type="checkbox">
+            <p>This is an inbox layout.</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Check one item</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Hold down your Shift key</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Check a lower item</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Everything in between should also be set to checked</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Just regular JavaScript</p>
+        </div>
+    </div>
+    <button onclick="addCheckbox()">add another checkbox</button>
+
+    <script>
+        // We select the checkboxes
+        let checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+        console.log(checkboxes);
+
+        let lastChecked;
+
+        function handleCheck(e) {
+            // Check if they had the shift key down
+            // And check that they are checking it
+            let inBetween = false;
+            if (e.shiftKey && this.checked) {
+                // loop over every single checkbox 
+                checkboxes.forEach(checkbox => {
+                    if (checkbox === this || checkbox === lastChecked) {
+                        inBetween = !inBetween;
+                        // Starting to check them inbetween!
+                    }
+
+                    if (inBetween) {
+                        checkbox.checked = true;
+                    }
+                });
+            }
+            lastChecked = this;
+        }
+
+
+        checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+
+        function makeRandomId(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+
+        function addCheckbox() {
+            let randomText = makeRandomId(Math.floor(Math.random() * 15) + 1);
+            let node = document.createElement('div');
+            node.setAttribute('class', 'item');
+            html = `<input type="checkbox"><p>${randomText}</p>`;
+            node.innerHTML = html;
+            document.querySelector('.inbox').appendChild(node);
+            checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+            checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+            console.log(checkboxes);
+        }
+    </script>
+</body>
+
+</html>
