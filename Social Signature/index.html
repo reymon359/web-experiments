@@ -46,7 +46,7 @@ ramonmorcillo.com
         html,
         body {
             height: 100%;
-            background-color: #eeeeee;
+            background: linear-gradient(45deg, rgb(22, 244, 197) 0%, rgb(22, 244, 197) 12%, rgb(24, 219, 187) 12%, rgb(24, 219, 187) 51%, rgb(26, 193, 176) 51%, rgb(26, 193, 176) 52%, rgb(28, 168, 166) 52%, rgb(28, 168, 166) 66%, rgb(29, 143, 155) 66%, rgb(29, 143, 155) 73%, rgb(31, 117, 145) 73%, rgb(31, 117, 145) 80%, rgb(33, 92, 134) 80%, rgb(33, 92, 134) 100%);
             margin: 0;
             overflow: hidden;
         }
@@ -56,11 +56,11 @@ ramonmorcillo.com
             align-items: center;
             justify-content: center;
             height: 100%;
-            font-family: arial;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
         
         .social {
-            font-size: 0px;
+            /* font-size: 0px; */
             position: fixed;
             bottom: 35px;
             left: 35px;
@@ -70,8 +70,8 @@ ramonmorcillo.com
         }
         
         .social .cube {
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
             background: #272727;
             border-radius: 6px;
             display: flex;
@@ -79,13 +79,12 @@ ramonmorcillo.com
             justify-content: center;
             position: relative;
             cursor: pointer;
-            font-size: 36px;
+            font-size: 20px;
+            box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, .7);
             color: white;
         }
         
         .social .cube a {
-            width: 60px;
-            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,6 +110,12 @@ ramonmorcillo.com
         .social .social-buttons .cube {
             position: absolute;
             color: #861919;
+            transition: all 3s;
+        }
+        
+        .social .social-buttons .cube:hover {
+            width: 80px;
+            height: 80px;
         }
         
         .social .social-buttons .cube svg {
