@@ -1,2 +1,35 @@
-# web-experiments
-A collection of  web experiments of any kind 
+# Web Experiments
+
+A collection of web experiments of any kind 
+
+- [Analog Clock](./Analog%20Clock)
+- [Array Methods](./Array%20Methods)
+- [BMI Calculator](./BMI%20Calculator)
+- [CSS Variables](./CSS%20Variables)
+- [Canvas Experiments](./Canvas%20Experiments)
+- [Canvas Rainbow](./Canvas%20Rainbow)
+- [Checking Checkboxes](./Checking%20Checkboxes)
+- [Console Tricks](./Console%20Tricks)
+- [Countdown Timer](./Countdown%20Timer)
+- [Custom Video Player](./Custom%20Video%20Player)
+- [Follow Along Nav](./Follow%20Along%20Nav)
+- [Geolocation Compass](./Geolocation%20Compass)
+- [Image Puzzle](./Image%20Puzzle)
+- [JavaScript Drum Kit](./JavaScript%20Drum%20Kit)
+- [Just An Artichoke](./Just%20An%20Artichoke)
+- [Motivational Gallery](./Motivational%20Gallery)
+- [Mouse Over Shadow](./Mouse%20Over%20Shadow)
+- [Neon Text Effect](./Neon%20Text%20Effect)
+- [Photobooth](./Photobooth)
+- [Random Color Cube](./Random%20Color%20Cube)
+- [Seasons Falling](./Seasons%20Falling)
+- [Slide in on Scroll](./Slide%20in%20on%20Scroll)
+- [Social Signature](./Social%20Signature)
+- [Speech Detection](./Speech%20Detection)
+- [Speech Synthesis Playground](./Speech%20Synthesis%20Playground)
+- [Sudoku Board Generator](./Sudoku%20Board%20Generator)
+- [Typing Animation](./Typing%20Animation)
+- [USA Population](./USA%20Population)
+- [Underwater Adventures](./Underwater%20Adventures)
+- [Unicorn Key Detection](./Unicorn%20Key%20Detection)
+- [Whack a Mole](./Whack%20a%20Mole)
